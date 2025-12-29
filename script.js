@@ -128,3 +128,52 @@ function applyFilters() {
 
     render(filtered);
 }
+
+const table = document.getElementById("desktopTable");
+const headers = table.querySelectorAll("th");
+let sortDirection = {};
+
+headers.forEach((header) => {
+    header.addEventListener("click", () => {
+        const columnIndex = header.dataset.column;
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        // Toggle direction
+        const direction = sortDirection[columnIndex] === "asc" ? "desc" : "asc";
+        sortDirection[columnIndex] = direction;
+
+        // Reset all headers
+        headers.forEach(h => h.classList.remove("asc", "desc"));
+        header.classList.add(direction);
+
+        rows.sort((a, b) => {
+            let aText = a.children[columnIndex].innerText.trim();
+            let bText = b.children[columnIndex].innerText.trim();
+
+            // Date sorting
+            if (!isNaN(Date.parse(aText)) && !isNaN(Date.parse(bText))) {
+                return direction === "asc"
+                    ? new Date(aText) - new Date(bText)
+                    : new Date(bText) - new Date(aText);
+            }
+
+            // Numeric sorting
+            if (!isNaN(aText) && !isNaN(bText)) {
+                return direction === "asc"
+                    ? aText - bText
+                    : bText - aText;
+            }
+
+            // String sorting
+            return direction === "asc"
+                ? aText.localeCompare(bText)
+                : bText.localeCompare(aText);
+        });
+
+        tbody.innerHTML = "";
+        rows.forEach(row => tbody.appendChild(row));
+    });
+});
+
+
