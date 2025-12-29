@@ -159,3 +159,15 @@ h1 {
         margin-bottom: 0;
     }
 }
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-item label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 6px;
+}
