@@ -171,3 +171,23 @@ h1 {
     color: #495057;
     margin-bottom: 6px;
 }
+
+th {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.sort-arrow {
+    font-size: 10px;
+    margin-left: 6px;
+    opacity: 0.5;
+}
+
+th.asc .sort-arrow::after {
+    content: " ▲";
+}
+
+th.desc .sort-arrow::after {
+    content: " ▼";
+}
