@@ -13,28 +13,40 @@
 </p>
 
 <div class="filters">
-    <input type="date" id="dateFilter">
 
-    <select id="timeFilter">
-        <option value="">All Time Slots</option>
-        <option value="0">00:00 – 03:00</option>
-        <option value="3">03:00 – 06:00</option>
-        <option value="6">06:00 – 09:00</option>
-        <option value="9">09:00 – 12:00</option>
-        <option value="12">12:00 – 15:00</option>
-        <option value="15">15:00 – 18:00</option>
-        <option value="18">18:00 – 21:00</option>
-        <option value="21">21:00 – 24:00</option>
-    </select>
+    <div class="filter-item">
+        <label for="dateFilter">Date of Arrival</label>
+        <input type="date" id="dateFilter">
+    </div>
 
-    <select id="locationFilter">
-        <option value="">All Locations</option>
-        <option value="MOPA Airport">MOPA Airport</option>
-        <option value="Dabolim Airport">Dabolim Airport</option>
-        <option value="Madgaon Railway Station">Madgaon Railway Station</option>
-        <option value="Thivim Railway Station">Thivim Railway Station</option>
-    </select>
+    <div class="filter-item">
+        <label for="timeFilter">Time Slot</label>
+        <select id="timeFilter">
+            <option value="">All Time Slots</option>
+            <option value="0">00:00 – 03:00</option>
+            <option value="3">03:00 – 06:00</option>
+            <option value="6">06:00 – 09:00</option>
+            <option value="9">09:00 – 12:00</option>
+            <option value="12">12:00 – 15:00</option>
+            <option value="15">15:00 – 18:00</option>
+            <option value="18">18:00 – 21:00</option>
+            <option value="21">21:00 – 24:00</option>
+        </select>
+    </div>
+
+    <div class="filter-item">
+        <label for="locationFilter">Arrival Location</label>
+        <select id="locationFilter">
+            <option value="">All Locations</option>
+            <option value="MOPA Airport">MOPA Airport</option>
+            <option value="Dabolim Airport">Dabolim Airport</option>
+            <option value="Madgaon Railway Station">Madgaon Railway Station</option>
+            <option value="Thivim Railway Station">Thivim Railway Station</option>
+        </select>
+    </div>
+
 </div>
+
 
 <div id="results">
     <table id="desktopTable">
