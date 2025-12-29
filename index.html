@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cab Pool Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Cab Pool Finder</h1>
+<p class="subtitle">
+    Use below filters to find other potentail students to pool cab with
+</p>
+
+<div class="filters">
+    <input type="date" id="dateFilter">
+
+    <select id="timeFilter">
+        <option value="">All Time Slots</option>
+        <option value="0">00:00 – 03:00</option>
+        <option value="3">03:00 – 06:00</option>
+        <option value="6">06:00 – 09:00</option>
+        <option value="9">09:00 – 12:00</option>
+        <option value="12">12:00 – 15:00</option>
+        <option value="15">15:00 – 18:00</option>
+        <option value="18">18:00 – 21:00</option>
+        <option value="21">21:00 – 24:00</option>
+    </select>
+
+    <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="MOPA Airport">MOPA Airport</option>
+        <option value="Dabolim Airport">Dabolim Airport</option>
+        <option value="Madgaon Railway Station">Madgaon Railway Station</option>
+        <option value="Thivim Railway Station">Thivim Railway Station</option>
+    </select>
+</div>
+
+<div id="results">
+    <table id="desktopTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Arrival Location</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
